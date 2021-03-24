@@ -1,7 +1,7 @@
 nav {
   height: 120px;
-  background-color: #4056a1;
-  color: #FFFFFF;
+  background-color: #465eac;
+  color:aliceblue;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,10 +11,4 @@ nav {
   font-size: 40px;
   font-family: 'Bungee', sans-serif;
   margin-left: 1.5em;
-  
-}
-
-.new-tweet {
-  font-family: "Source Sans Pro", sans-serif;
-  margin-right: 1.5em;
 }
