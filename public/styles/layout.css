@@ -31,3 +31,10 @@ body {
  main {
    width: 90%;
  }
+
+ .container {
+  width: 450px;
+  margin: auto;
+  background-color:dimgray;
+  position: relative;
+  top: 140px;
