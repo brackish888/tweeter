@@ -29,12 +29,14 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  main {
-   width: 90%;
- }
+  width: 90%;
+  background-color: rgb(0, 89, 255);
+}
 
- .container {
+h4, h5, h6 {
   width: 450px;
   margin: auto;
-  background-color:dimgray;
-  position: relative;
-  top: 140px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}

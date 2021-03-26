@@ -1,4 +1,4 @@
-main.container {
+.container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -21,17 +21,20 @@ form {
 }
 
 label[for=tweet-text] {
-  font-weight: 700;
+  font-weight: 300;
 }
 
-text-field {
-  background:#4f75f1 ;
+textarea {
+  font-family: 'Source Sans Pro', sans-serif;
+  background:#4f75f1;
+  resize: vertical;
+  min-height: 5em;
   resize: none;
   outline: none;
   width: 100%;
   border-top: 0;
   border-left: 0;
-  border-bottom: 2px solid black;
+  border-bottom: 5px solid black;
   border-right: 0;
 }
 
@@ -46,10 +49,12 @@ button[type=submit] {
   color:#4f75f1;
 }
 
-.counter {
-  font-weight: 700;
-}
 
-main section h2 {
-  display: none;
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
+  
+.overcount {
+  color:red;
+  font-weight: 700;
 }

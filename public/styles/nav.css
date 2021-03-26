@@ -5,6 +5,10 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 1.5em;
+  width: 100%;
 }
 
 .logo {
