@@ -1,6 +1,10 @@
 $(document).ready(function() {
   
-
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
   
   const createTweetElement = function(tweetObject) {
     let $tweet = $(`<article class="tweet">
@@ -12,7 +16,7 @@ $(document).ready(function() {
     <p class="tweeter-handle">${tweetObject.user.handle}</p>
     </header> 
     <div class="tweet-content">
-    <p>${tweetObject.content.text}</p>
+    <p>${escape(tweetObject.content.text)}</p>
     </div>
     <footer class="tweet-footer">
     <output name="date-posted" class="date-posted">${tweetObject.created.at}</output> 
@@ -47,7 +51,7 @@ $('form').submit(function (event) {
     return $('.error-container').empty().append("Error: Over character limit").hide().addClass('error-visible').slideDown()
   };
   if (textLength < 1) {
-    return $('.error-container').empty().append("Error: Your tweet is blank").hide().addClass('error-visible').slideDown();
+    return $('.error-container').empty().append("Please type some characters to tweet").hide().addClass('error-visible').slideDown();
   } 
   $.ajax("/tweets", {data: tweetText, method: 'POST'})
   

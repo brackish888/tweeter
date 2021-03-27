@@ -19,3 +19,13 @@ nav {
 .tweet-link {
   margin-right: 1.5em;
 } 
+
+.nav-bar-arrows {
+  width: 20px;
+}
+
+.nav-bar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -39,7 +39,10 @@
     <nav>
       <span class="logo">tweeter</span>
 
-    <span class="new-tweet"><b>Write</b> a new tweet</span>
+    <div class= "nav-bar-right">
+      <span style= "font-family: Source Sans Pro">Write a new tweet</span>
+      <img class="nav-bar-arrows" src="images/doubleArrow.png">
+      </div>
     </nav>
 <header>
     <div>
@@ -63,7 +66,8 @@
   <form method="POST" action="/tweets/">
     <label for="tweet-text">What are you humming about?</label>
     <textarea name="text" id="tweet-text"></textarea>
-    <div class="container">
+    </div>
+    <div class="tweet-action">
       <button type="submit">Tweet</button>
       <output name="counter" class="counter" for="tweet-text">140</output>
     </div>
