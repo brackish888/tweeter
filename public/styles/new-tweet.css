@@ -38,10 +38,21 @@ textarea {
   border-right: 0;
 }
 
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
 form div.container {
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
+}
+.error-container {
+  width: 100%;
+}
+.error-visible {
+  border-color: red;
 }
 
 button[type=submit] {
