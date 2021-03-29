@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
      <!--Fonts-->
@@ -23,14 +23,20 @@
 
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <link rel="stylesheet" href="/styles/tweets.css" typer = "text/css" />
+
     <!-- External JS --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <script src="/scripts/composer-char-counter.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   </head>
 
@@ -40,42 +46,49 @@
       <span class="logo">tweeter</span>
 
     <div class= "nav-bar-right">
-      <span style= "font-family: Source Sans Pro">Write a new tweet</span>
-      <img class="nav-bar-arrows" src="images/doubleArrow.png">
+      <span><a class="new-tweet-jump-link" href="#tweet-text"><span class="bold-text">Write</span> a new tweet</a></span>
+      <div
+     <span class="nav-bar-arrows bold-text"> >> </span>
       </div>
     </nav>
 <header>
     <div>
-        <img src="/images/profile-hex.png"> 
+        <img class="profile-pic" src="/images/profile-hex.png"> 
     </div>
     <br>
     <div>
-        <h2>Sam Tichota</h2>
+        <h2><span class="bold-text">Sam Tichota</span></h2>
     </div>
 </header>
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
-    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. 
+    <p> Space, the final frontier. These are the voyages of the Starship Enterprise. 
     Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before. 
     Many say exploration is part of our destiny, but it’s actually our duty to future generations and their quest to ensure the survival of the human species.</p>
 
 
  <section class="new-tweet">
-  <h2 class="heading">Compose Tweet</h2>
-  <div class="error-container"></div>
-  <form method="POST" action="/tweets/">
+ <h2 class="heading">Compose Tweet</h2>
+ 
+  <form method="POST" action="/tweets">
     <label for="tweet-text">What are you humming about?</label>
+    <div>
     <textarea name="text" id="tweet-text"></textarea>
-    </div>
+     <div class="error-container">
+     </div>
+     <span class="error-text"></span>
+
     <div class="tweet-action">
       <button type="submit">Tweet</button>
       <output name="counter" class="counter" for="tweet-text">140</output>
     </div>
-  </form>
-</section>
-  <section class="tweet-container">
+   </form>
   </section>
+  <div
+   <section id="tweet-container">
 
+   </section>
+</div>
 </main>
   </body>
 </html>

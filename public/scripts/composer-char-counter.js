@@ -2,13 +2,13 @@
 
 $(document).ready(function() {
 
-  $("#tweet-text").on('keyup', 
+  $("#tweet-text").on('keyup',
     function() {
       let charLimitCount;
       const charLength = $(this).val().length;
-      const maxChar = 140
+      const maxChar = 140;
       charLimitCount = maxChar - charLength;
-      const counter = $(this).closest(".new-tweet").find(".counter")
+      const counter = $(this).closest(".new-tweet").find(".counter");
       if (charLimitCount < 0) {
         $(counter).addClass('overcount');
       }
@@ -16,5 +16,6 @@ $(document).ready(function() {
         $(counter).removeClass('overcount');
       }
       $(counter).text(charLimitCount);
-    });
+    }
+  );
 });

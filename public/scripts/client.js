@@ -4,64 +4,64 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   
-  const createTweetElement = function(tweetObject) {
+ 
+  const createTweetElement = function(tweet) {
     let $tweet = $(`<article class="tweet">
-    <header class="tweet-header"> 
-    <div class="tweet-header-left">
-    <img class="tweetImg" src=${tweetObject.user.avatar} alt="profile pic" width="20%">
-    <p class="user-name">${tweetObject.user.name}</p>
+    <header>
+    <div id="user">
+    <img src=${tweet.user.avatars} />
+    ${tweet.user.name}
     </div>
-    <p class="tweeter-handle">${tweetObject.user.handle}</p>
+    <div id="handle">${escape(tweet.user.handle)}</div>
     </header> 
     <div class="tweet-content">
-    <p>${escape(tweetObject.content.text)}</p>
+    ${escape(tweet.content.text)}
     </div>
     <footer class="tweet-footer">
-    <output name="date-posted" class="date-posted">${tweetObject.created.at}</output> 
-    <img src="images/social-buttons-temp.png" alt="social-buttons">
+    <div> ${moment(tweet.created_at).fromNow()}</div> 
     </footer>
     </article>`);
     return $tweet;
   };
-
-const renderTweets = function(tweets) {
-  console.log(tweets)
-  $('.tweet-container').empty();
-  for (const tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
-  $('.tweet-container').prepend($tweet);
-  }
-
-  const loadTweets = function() {
-    $.ajax('/tweets', { method: 'GET' })
-    .then(function (tweets) {
-      renderTweets(tweets);
-  })};
-  loadTweets();
-};
-
-
-$('form').submit(function (event) {
-  event.preventDefault();
-  let tweetText = $(this).serialize();
-  let textLength = $('#tweet-text').val().length
-  if (textLength > 140) {
-    return $('.error-container').empty().append("Error: Over character limit").hide().addClass('error-visible').slideDown()
+ const renderTweets = function(tweets) {
+    console.log(tweets);
+    $('#tweet-container').empty();
+    for (const tweet of tweets.reverse()) {
+      let $tweet = createTweetElement(tweet);
+      $('#tweet-container').append($tweet);
+    }
   };
-  if (textLength < 1) {
-    return $('.error-container').empty().append("Please type some characters to tweet").hide().addClass('error-visible').slideDown();
-  } 
-  $.ajax("/tweets", {data: tweetText, method: 'POST'})
-  
-  .then(function (tweetText) {
-    $('.error-container').removeClass('error-visible').empty();
-    console.log('Success: ', tweetText);
-    loadTweets();
-    $('form')[0].reset();
-    $('.counter').text('140');
+
+    const loadTweets = function() {
+      $.ajax({url: '/tweets', method: 'GET',
+        }).then((res, err) => {
+          renderTweets(res);
+        }).catch(err => {
+          console.log(err);
+        });
+    };
+   loadTweets();
+
+  $('form').submit(function(event) {
+    event.preventDefault();
+    let textLength = $('textarea.tweet-text').val().length;
+    if (textLength > 140) {
+      return $('.error-container').empty().append("Error: Over character limit").hide().addClass('error-visible').slideDown();
+    }
+    if (textLength < 1) {
+      return $('.error-container').empty().append("Error: Type some characters to send a tweet!").hide().addClass('error-visible').slideDown();
+    }
+    $.ajax({url: "/tweets", data: $(this).serialize(), method: 'POST'})
+      .then(() => {
+        $('.error-container').removeClass('error-visible').empty();
+        loadTweets();
+        $("textarea.tweet-text").val("");
+        $('form')[0].reset();
+        $('.counter').text('140');
+      });
   });
-});
+  loadTweets();
 
 });

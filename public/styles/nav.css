@@ -1,10 +1,11 @@
+/* default state */
 nav {
   height: 120px;
   background-color:#4f75f1;
   color:aliceblue;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  background-image: url(http://www.transparenttextures.com/patterns/brick-wall.png);
   position: fixed;
   top: 0;
   padding: 1.5em;
@@ -20,12 +21,60 @@ nav {
   margin-right: 1.5em;
 } 
 
-.nav-bar-arrows {
-  width: 20px;
+.new-tweet-jump-link {
+  color:aliceblue;
+  text-decoration: none;
 }
-
 .nav-bar-right {
+  font-weight: bold;
   display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
   flex-direction: column;
   align-items: center;
+}
+.nav-bar-arrows {
+  align-items: flex-start;
+  transform: rotate(90deg);
+  font-family: sans-serif;
+  padding-top: 5px;
+  width: 5em;
+  color: rgb(232, 232, 241);
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background: url(http://www.transparenttextures.com/patterns/brick-wall.png);
+    background-color: #0034e0;
+  }
+} 
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+
+}
+
+/* Another smartphone breakpoint is maximum width of around 420px */
+@media only screen and (max-width: 420px) {
+
+}
+
+/* Tablet: minimum width of 768px to maximum width of 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* Another tablet breakpoint is maximum width of 1024px */
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* Another tablet breakpoint is minimum width of 768px */
+@media only screen and (min-width: 768px) {
+
+
+}
+
+/* Laptops / Desktops: minimum width of 960px */
+@media only screen and (min-width: 960px) {
+
 }

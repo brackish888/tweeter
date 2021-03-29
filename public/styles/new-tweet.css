@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+html {
+  scroll-padding-top: 120px;
+}
+
 section {
   margin-top: 1em;
 }
@@ -14,6 +18,13 @@ section {
   margin-right: 0;
   width: 100%;
   padding: 0 1em 1em 1em;
+}
+
+tweet-text {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  width: 90%;
+  border-bottom: 2px solid  black;
 }
 
 form {
@@ -68,4 +79,11 @@ button[type=submit] {
 .overcount {
   color:red;
   font-weight: 700;
+}
+
+/* Desktop design */
+@media only screen and (min-width: 1024px) {
+  .container {
+    padding-top: none;
+  }
 }

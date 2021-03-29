@@ -8,3 +8,11 @@ header {
   background-image: url(https://www.transparenttextures.com/patterns/arabesque.png);
 
 }
+
+/* Desktop design */
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 35%;
+    margin-left: 20px;
+  }
+ }

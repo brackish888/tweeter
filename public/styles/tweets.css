@@ -58,3 +58,12 @@ width: 95%;
 .date-posted {
   font-size:smaller;
 }
+
+.social-buttons {
+  width: 25%;
+  opacity: 0%;
+}
+
+
+@media only screen and (min-width: 1024px) {
+}
