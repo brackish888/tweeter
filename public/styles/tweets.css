@@ -28,13 +28,13 @@ background: none;
 background-color: #e4e1dc;
 width: 95%;
 }
-.user-name {
-  color: #343a4d;
-  font-weight: 200;
-}
 .tweet-header-left {
   display: flex;
   justify-content: flex-start;
+}
+.user-name {
+  color: #343a4d;
+  font-weight: 200;
 }
 .tweeter-handle {
   opacity: 0%;

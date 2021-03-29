@@ -25,7 +25,7 @@ $(document).ready(function() {
     </article>`);
     return $tweet;
   };
- const renderTweets = function(tweets) {
+  const renderTweets = function(tweets) {
     console.log(tweets);
     $('#tweet-container').empty();
     for (const tweet of tweets.reverse()) {
@@ -34,30 +34,31 @@ $(document).ready(function() {
     }
   };
 
-    const loadTweets = function() {
-      $.ajax({url: '/tweets', method: 'GET',
-        }).then((res, err) => {
-          renderTweets(res);
-        }).catch(err => {
-          console.log(err);
-        });
-    };
-   loadTweets();
+  const loadTweets = function() {
+    $.ajax({url: '/tweets', method: 'GET',
+    }).then((res, err) => {
+      renderTweets(res);
+    }).catch(err => {
+      console.log(err);
+    });
+  };
+  loadTweets();
 
   $('form').submit(function(event) {
     event.preventDefault();
-    let textLength = $('textarea.tweet-text').val().length;
+    let tweetText = $(this).serialize();
+    let textLength = $('#tweet-text').val().length;
     if (textLength > 140) {
-      return $('.error-container').empty().append("Error: Over character limit").hide().addClass('error-visible').slideDown();
+      return $('.error-container').empty().append("Error: Your tweet is over the character limit").hide().addClass('error-visible').slideDown();
     }
     if (textLength < 1) {
       return $('.error-container').empty().append("Error: Type some characters to send a tweet!").hide().addClass('error-visible').slideDown();
     }
-    $.ajax({url: "/tweets", data: $(this).serialize(), method: 'POST'})
-      .then(() => {
+    $.ajax( "/tweets", {data: tweetText, method: 'POST'})
+      .then(function(tweetText) {
         $('.error-container').removeClass('error-visible').empty();
+        console.log('Success: ', tweetText);
         loadTweets();
-        $("textarea.tweet-text").val("");
         $('form')[0].reset();
         $('.counter').text('140');
       });
