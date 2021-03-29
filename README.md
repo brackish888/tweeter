@@ -10,6 +10,7 @@ Tweeter is a simple, single-page Twitter clone.
 - A character countdown that turns red when you have reached the max character amount of a single tweet (max of 140),
 - Error messages if too few( 0 characters) or too many (>140 characters) are put into the new-tweet box,
 - Responsive design that allows for tablet, desktop and phone layouts.
+- Compose tweets and assign them to randomly generated profiles.
 
 ## Getting Started
 
@@ -27,6 +28,12 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Screenshots
 
-![]()
+!['Screenshot of Tweeter header and main profile'](https://github.com/brackish888/tweeter/blob/master/docs/tweeterHeader.png?raw=true)
 
-![]()
+!['Get redirected to the compose new tweet section of the page from the nav bar'](https://github.com/brackish888/tweeter/blob/master/docs/writeNewTweetRedirect.png?raw=true)
+
+!['Character coounter in action'](https://github.com/brackish888/tweeter/blob/master/docs/Character-counter.png?raw=true)
+
+!['Error message for 0 characters'](https://github.com/brackish888/tweeter/blob/master/docs/errorMessageForZeroChar.png?raw=true)
+
+!['Randomly generated tweeter friend!'](https://github.com/brackish888/tweeter/blob/master/docs/GenerateRandomTweeter.png?raw=true)
