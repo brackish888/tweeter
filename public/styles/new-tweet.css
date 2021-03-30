@@ -1,9 +1,3 @@
-/* .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-} */
 
 html {
   scroll-padding-top: 120px;
@@ -17,7 +11,7 @@ section {
   background-color: #4f75f1;
   margin-right: 0;
   width: 100%;
-  align-content: center;
+  align-items: flex-end;
   flex-direction: column;
   padding: 0 1em 1em 1em;
 }
@@ -53,7 +47,7 @@ textarea {
   border-right: 0;
 }
 
-.tweet-actions {
+.tweet-action {
   display: flex;
   justify-content: space-between;
 }
@@ -75,7 +69,6 @@ button[type=submit] {
 }
   
 .overcount {
-  align-content: flex-end;
   color:red;
   font-weight: 700;
 }
