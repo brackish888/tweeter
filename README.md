@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-- This repository is my version and work from the starter code supplied for the project by LighthouseLabs: We cloned a starter repositiory to practice our HTML, CSS, JS, jQuery and AJAX front-end skills, while using Node, Express for back-end skills.
+- This repository is my version and work from the starter code supplied for the project by LighthouseLabs: We cloned a starter repositiory to practice our HTML, CSS, JS, jQuery and AJAX front-end skills, while using Node and Express for back-end skills.
 
 ## Features
 
@@ -36,4 +36,4 @@ Tweeter is a simple, single-page Twitter clone.
 
 !['Error message for 0 characters'](https://github.com/brackish888/tweeter/blob/master/docs/errorMessageForZeroChar.png?raw=true)
 
-!['Randomly generated tweeter friend!'](https://github.com/brackish888/tweeter/blob/master/docs/GenerateRandomTweeter.png?raw=true)
+!['Randomly generated tweeter friend!'](https://github.com/brackish888/tweeter/blob/master/docs/exampleProfileGenerated.png?raw=true)
