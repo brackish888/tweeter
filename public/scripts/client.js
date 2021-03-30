@@ -31,7 +31,6 @@ $(document).ready(function() {
     return $tweet;
   };
   const renderTweets = function(tweets) {
-    console.log(tweets);
     $('#tweet-container').empty();
     for (const tweet of tweets.reverse()) {
       let $tweet = createTweetElement(tweet);
@@ -44,7 +43,6 @@ $(document).ready(function() {
     }).then((res, err) => {
       renderTweets(res);
     }).catch(err => {
-      console.log(err);
     });
   };
   loadTweets();
@@ -62,7 +60,6 @@ $(document).ready(function() {
     $.ajax( "/tweets", {data: tweetText, method: 'POST'})
       .then(function(tweetText) {
         $('.error-container').removeClass('error-visible').empty();
-        console.log('Success: ', tweetText);
         loadTweets();
         $('form')[0].reset();
         $('.counter').text('140');
